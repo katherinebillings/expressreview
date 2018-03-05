@@ -12,7 +12,16 @@ router.get('/', function(req, res, next) {
     title: 'Done yet?',
     message : "handlebars is awesome",
     mainpage : true,
+    cms: false,
     kidsmode : config.kidsmode
+  });
+});
+
+router.get('/cms', (req, res) => {
+  res.render('cmsForm', {
+    title: 'CMS',
+    cms: true,
+    mainpage: false
   });
 });
 
